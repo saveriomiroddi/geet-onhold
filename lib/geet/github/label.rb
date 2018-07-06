@@ -10,7 +10,7 @@ module Geet
         @color = color
       end
 
-      # See https://developer.github.com/v3/issues/labels/#list-all-labels-for-this-repository
+      # Endpoint: https://developer.github.com/v3/issues/labels/#list-all-labels-for-this-repository
       #
       # Returns a flat list of names in string form.
       #
@@ -26,7 +26,7 @@ module Geet
         end
       end
 
-      # See https://developer.github.com/v3/issues/labels/#create-a-label
+      # Endpoint: https://developer.github.com/v3/issues/labels/#create-a-label
       #
       def self.create(name, color, api_interface)
         api_path = 'labels'

@@ -15,7 +15,7 @@ module Geet
         @api_interface = api_interface
       end
 
-      # See https://docs.gitlab.com/ee/api/milestones.html#list-project-milestones
+      # Endpoint: https://docs.gitlab.com/ee/api/milestones.html#list-project-milestones
       #
       def self.list(api_interface)
         api_path = "projects/#{api_interface.path_with_namespace(encoded: true)}/milestones"

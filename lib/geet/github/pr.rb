@@ -6,7 +6,7 @@ module Geet
     autoload :AbstractIssue, File.expand_path('abstract_issue', __dir__)
 
     class PR < AbstractIssue
-      # See https://developer.github.com/v3/pulls/#create-a-pull-request
+      # Endpoint: https://developer.github.com/v3/pulls/#create-a-pull-request
       #
       def self.create(title, description, head, api_interface, base: nil)
         api_path = 'pulls'
@@ -26,7 +26,7 @@ module Geet
         new(number, api_interface, title, link)
       end
 
-      # See https://developer.github.com/v3/pulls/#list-pull-requests
+      # Endpoint: https://developer.github.com/v3/pulls/#list-pull-requests
       #
       def self.list(api_interface, milestone: nil, assignee: nil, head: nil)
         check_list_params!(milestone, assignee, head)
@@ -51,7 +51,7 @@ module Geet
         end
       end
 
-      # See https://developer.github.com/v3/pulls/#merge-a-pull-request-merge-button
+      # Endpoint: https://developer.github.com/v3/pulls/#merge-a-pull-request-merge-button
       #
       def merge
         api_path = "pulls/#{number}/merge"
@@ -59,7 +59,7 @@ module Geet
         @api_interface.send_request(api_path, http_method: :put)
       end
 
-      # See https://developer.github.com/v3/pulls/review_requests/#create-a-review-request
+      # Endpoint: https://developer.github.com/v3/pulls/review_requests/#create-a-review-request
       #
       def request_review(reviewers)
         api_path = "pulls/#{number}/requested_reviewers"

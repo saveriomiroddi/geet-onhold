@@ -21,7 +21,7 @@ module Geet
         @api_interface = api_interface
       end
 
-      # See https://developer.github.com/v3/issues/milestones/#get-a-single-milestone
+      # Endpoint: https://developer.github.com/v3/issues/milestones/#get-a-single-milestone
       #
       def self.find(number, api_interface)
         api_path = "milestones/#{number}"
@@ -35,7 +35,7 @@ module Geet
         new(number, title, due_on, api_interface)
       end
 
-      # See https://developer.github.com/v3/issues/milestones/#list-milestones-for-a-repository
+      # Endpoint: https://developer.github.com/v3/issues/milestones/#list-milestones-for-a-repository
       #
       def self.list(api_interface)
         api_path = 'milestones'

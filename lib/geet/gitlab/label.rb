@@ -10,7 +10,7 @@ module Geet
         @color = color
       end
 
-      # See https://docs.gitlab.com/ee/api/labels.html#list-labels
+      # Endpoint: https://docs.gitlab.com/ee/api/labels.html#list-labels
       #
       # Returns a flat list of names in string form.
       #
@@ -26,7 +26,7 @@ module Geet
         end
       end
 
-      # See https://docs.gitlab.com/ee/api/labels.html#create-a-new-label
+      # Endpoint: https://docs.gitlab.com/ee/api/labels.html#create-a-new-label
       #
       def self.create(name, color, api_interface)
         api_path = "projects/#{api_interface.path_with_namespace(encoded: true)}/labels"

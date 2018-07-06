@@ -11,7 +11,7 @@ module Geet
         @link = link
       end
 
-      # See https://docs.gitlab.com/ee/api/issues.html#list-issues
+      # Endpoint: https://docs.gitlab.com/ee/api/issues.html#list-issues
       #
       def self.list(api_interface, assignee: nil, milestone: nil)
         api_path = "projects/#{api_interface.path_with_namespace(encoded: true)}/issues"

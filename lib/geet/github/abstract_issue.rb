@@ -20,7 +20,7 @@ module Geet
         @link = link
       end
 
-      # See https://developer.github.com/v3/issues/#list-issues-for-a-repository
+      # Endpoint: https://developer.github.com/v3/issues/#list-issues-for-a-repository
       #
       def self.list(api_interface, milestone: nil, assignee: nil, &type_filter)
         api_path = 'issues'
@@ -61,7 +61,7 @@ module Geet
         @api_interface.send_request(api_path, data: request_data)
       end
 
-      # See https://developer.github.com/v3/issues/#edit-an-issue
+      # Endpoint: https://developer.github.com/v3/issues/#edit-an-issue
       #
       def edit(milestone:)
         request_data = { milestone: milestone }

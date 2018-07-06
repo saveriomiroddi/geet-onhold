@@ -6,7 +6,7 @@ require_relative '../github/gist'
 module Geet
   module Github
     class Gist
-      # See https://developer.github.com/v3/gists/#create-a-gist
+      # Endpoint: https://developer.github.com/v3/gists/#create-a-gist
       #
       def self.create(filename, content, api_interface, description: nil, publik: false)
         api_path = '/gists'

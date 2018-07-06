@@ -12,7 +12,7 @@ module Geet
         @link = link
       end
 
-      # See https://docs.gitlab.com/ee/api/merge_requests.html#list-merge-requests
+      # Endpoint: https://docs.gitlab.com/ee/api/merge_requests.html#list-merge-requests
       #
       def self.list(api_interface, milestone: nil, assignee: nil, head: nil)
         api_path = "projects/#{api_interface.path_with_namespace(encoded: true)}/merge_requests"
@@ -33,7 +33,7 @@ module Geet
         end
       end
 
-      # See https://docs.gitlab.com/ee/api/merge_requests.html#accept-mr
+      # Endpoint: https://docs.gitlab.com/ee/api/merge_requests.html#accept-mr
       #
       def merge
         api_path = "projects/#{@api_interface.path_with_namespace(encoded: true)}/merge_requests/#{number}/merge"

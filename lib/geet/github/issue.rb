@@ -6,7 +6,7 @@ module Geet
     autoload :AbstractIssue, File.expand_path('abstract_issue', __dir__)
 
     class Issue < Geet::Github::AbstractIssue
-      # See https://developer.github.com/v3/issues/#create-an-issue
+      # Endpoint: https://developer.github.com/v3/issues/#create-an-issue
       #
       def self.create(title, description, api_interface)
         api_path = 'issues'

@@ -23,7 +23,7 @@ module Geet
         permission_greater_or_equal_to?(user_permission, permission)
       end
 
-      # See https://developer.github.com/v3/repos/collaborators/#check-if-a-user-is-a-collaborator
+      # Endpoint: https://developer.github.com/v3/repos/collaborators/#check-if-a-user-is-a-collaborator
       #
       def is_collaborator?
         api_path = "collaborators/#{@username}"
@@ -43,7 +43,7 @@ module Geet
         end
       end
 
-      # See https://developer.github.com/v3/users/#get-the-authenticated-user
+      # Endpoint: https://developer.github.com/v3/users/#get-the-authenticated-user
       #
       def self.authenticated(api_interface)
         api_path = '/user'
@@ -53,7 +53,7 @@ module Geet
         new(response.fetch('login'), api_interface)
       end
 
-      # See https://developer.github.com/v3/repos/collaborators/#list-collaborators
+      # Endpoint: https://developer.github.com/v3/repos/collaborators/#list-collaborators
       #
       # Returns an array of User instances
       #
@@ -64,7 +64,7 @@ module Geet
         response.map { |user_entry| new(user_entry.fetch('login'), api_interface) }
       end
 
-      # See https://developer.github.com/v3/repos/collaborators/#review-a-users-permission-level
+      # Endpoint: https://developer.github.com/v3/repos/collaborators/#review-a-users-permission-level
       #
       def self.repo_permission(api_interface)
         username = authenticated(api_interface).username
